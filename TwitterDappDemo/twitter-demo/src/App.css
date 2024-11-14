@@ -1,180 +1,199 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f8fa;
+	color: #14171a;
+	padding: 20px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .connect {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  #userAddress {
+	text-transform: uppercase;
+	color: #1da1f2;
   }
-}
 
-/* App.css */
+  .spinner {
+	border: 4px solid rgba(0, 0, 0, 0.1);
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border-left-color: #09f;
+	animation: spin 1s linear infinite;
+  }
 
-.twitter-app {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #333;
-}
+  @keyframes spin {
+	to {
+	  transform: rotate(360deg);
+	}
+  }
 
-.app-title {
-    font-size: 24px;
-    color: #1DA1F2;
-    text-align: center;
-    margin-bottom: 20px;
-}
+  .container {
+	max-width: 600px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+  }
 
-.connect-button {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    background-color: #1DA1F2;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-}
+  h1 {
+	color: #1da1f2;
+	text-align: center;
+	margin-bottom: 20px;
+  }
 
-.twitter-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+  #connectWalletBtn {
+	background-color: #1da1f2;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 20px;
+	cursor: pointer;
+  }
 
-.tweet-input-section {
-    background-color: #f5f8fa;
-    padding: 15px;
-    border: 1px solid #e1e8ed;
-    border-radius: 10px;
-}
+  #userAddress {
+	margin: 10px 0;
+	font-size: 14px;
+  }
 
-.account-info {
-    font-size: 14px;
-    color: #657786;
-    margin-bottom: 10px;
-}
+  form {
+	margin-bottom: 20px;
+  }
 
-.tweet-input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #e1e8ed;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    resize: none;
-}
+  textarea {
+	width: calc(100% - 20px);
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	resize: none;
+  }
 
-.tweet-button {
-    padding: 10px 20px;
-    background-color: #1DA1F2;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    float: right;
-}
+  #connectMessage {
+	display: none;
+	margin: 10px 0;
+	font-size: 14px;
+	color: #65676b;
+  }
 
-.max-length-info {
-    font-size: 12px;
-    color: #657786;
-}
+  button[type="submit"] {
+	background-color: #1da1f2;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 20px;
+	cursor: pointer;
+	margin-top: 10px;
+  }
 
-.tweets-title {
-    font-size: 20px;
-    color: #1DA1F2;
-    margin-top: 20px;
-    border-bottom: 1px solid #e1e8ed;
-    padding-bottom: 5px;
-}
+  .tweet {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+  }
 
-.tweets-feed {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+  .author {
+	font-weight: bold;
+	color: #1da1f2;
+  }
 
-.tweet {
-    background-color: #ffffff;
-    padding: 15px;
-    border: 1px solid #e1e8ed;
-    border-radius: 10px;
-}
+  .like-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #1da1f2; /* Twitter's brand color */
+	font-size: 1.2em;
+	transition: all 0.3s ease;
+  }
 
-.tweet-header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #657786;
-}
+  .like-button:hover {
+	color: #e0245e; /* color change on hover like in Twitter */
+  }
 
-.tweet-author {
-    font-weight: bold;
-    color: #1DA1F2;
-}
+  .like-button:active {
+	transform: scale(1.1); /* scale up a bit when clicked */
+  }
 
-.tweet-content {
-    font-size: 16px;
-    margin: 10px 0;
-    color: #14171a;
-}
+  .like-button .fas,
+  .like-button .far {
+	font-size: 20px;
+  }
 
-.tweet-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+  .likes {
+	display: flex;
+	align-items: center;
+  }
 
-.tweet-likes {
-    font-size: 14px;
-    color: #657786;
-}
+  .likes-count {
+	margin-left: 5px;
+	font-weight: bold;
+  }
 
-.like-button, .unlike-button {
-    padding: 5px 10px;
-    font-size: 14px;
-    background-color: #e1e8ed;
-    color: #1DA1F2;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-}
+  .like-button .likes-count {
+	margin-left: 5px;
+  }
 
-.no-tweets {
-    font-size: 16px;
-    color: #657786;
-    text-align: center;
-    padding: 20px;
-}
+  .user-icon {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+  }
+
+  .tweet {
+	display: flex;
+	align-items: start;
+	margin-bottom: 20px;
+  }
+
+  .author,
+  .content {
+	flex-grow: 1;
+  }
+
+  .tweet-inner {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: flex-start;
+  }
+
+  .create-profile-form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+  }
+
+  .create-profile-form h2 {
+	color: #1da1f2;
+	margin-bottom: 20px;
+  }
+
+  .create-profile-form label {
+	color: #65676b;
+	margin-bottom: 5px;
+  }
+
+  .profile-input {
+	width: calc(100% - 20px);
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 10px;
+  }
+
+  .profile-submit {
+	background-color: #1da1f2;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 20px;
+	cursor: pointer;
+	margin-top: 10px;
+  }
